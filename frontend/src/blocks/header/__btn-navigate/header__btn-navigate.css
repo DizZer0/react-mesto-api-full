@@ -1,0 +1,16 @@
+.header__btn-navigate {
+  color: white;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: right;
+
+  text-decoration: none;
+  transition: .2s;
+}
+
+.header__btn-navigate:hover {
+  opacity: .6;
+}

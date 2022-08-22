@@ -1,0 +1,89 @@
+@import url(./vendor/normalize/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+/* Блок page 
+-----------------------------------------------------*/
+@import url(./blocks/page/page.css);
+/* Блок header
+-----------------------------------------------------*/
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__btn-navigate/header__btn-navigate.css);
+/* Блок logo
+-----------------------------------------------------*/
+@import url(./blocks/logo/logo.css);
+/* Блок content
+-----------------------------------------------------*/
+@import url(./blocks/content/content.css);
+/* Блок profile
+-----------------------------------------------------*/
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__name/profile__name.css);
+@import url(./blocks/profile/__edit-button/profile__edit-button.css);
+@import url(./blocks/profile/__status/profile__status.css);
+@import url(./blocks/profile/__add-button/profile__add-button.css);
+@import url(./blocks/profile/__avatar-btn/profile__avatar-btn.css);
+/* Блок photo-grid
+-----------------------------------------------------*/
+@import url(./blocks/photo-grid/photo-grid.css);
+@import url(./blocks/photo-grid/__like-button/photo-grid__like-button.css);
+@import url(./blocks/photo-grid/__like-button/_active/photo-grid__like-button_active.css);
+@import url(./blocks/photo-grid/__image/photo-grid__image.css);
+@import url(./blocks/photo-grid/__info/photo-grid__info.css);
+@import url(./blocks/photo-grid/__item/photo-grid__item.css);
+@import url(./blocks/photo-grid/__title/photo-grid__title.css);
+@import url(./blocks/photo-grid/__delete-button/photo-grid__delete-button.css);
+@import url(./blocks/photo-grid/__like-number/photo-grid__like-number.css);
+@import url(./blocks/photo-grid/__delete-button/_hidden/photo-grid__delete-button_hidden.css);
+/* Блок footer
+-----------------------------------------------------*/
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__copyright/footer__copyright.css);
+
+/* Блок popup
+-----------------------------------------------------*/
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__exit-button/popup__exit-button.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/_type/popup_type_view-photo.css);
+
+/* Блок form-change
+-----------------------------------------------------*/
+@import url(./blocks/form-change/form-change.css);
+@import url(./blocks/form-change/__input-text/form-change__input-text.css);
+@import url(./blocks/form-change/__save-button/form-change__save-button.css);
+@import url(./blocks/form-change/__text/form-change__text.css);
+@import url(./blocks/form-change/__title/form-change__title.css);
+@import url(./blocks/form-change/__text/_type/form-change__text_type_error.css);
+@import url(./blocks/form-change/__input-error/form-change__input-error.css);
+@import url(./blocks/form-change/__input-error/_active/form-change__input-error_active.css);
+@import url(./blocks/form-change/__save-button/_inactive/form-change__save-button_inactive.css);
+@import url(./blocks/form-change/__title/_type/form-change__title_type_delete.css);
+/* Блок view-photo
+-----------------------------------------------------*/
+@import url(./blocks/view-photo/view-photo.css);
+@import url(./blocks/view-photo/__img/view-photo__img.css);
+@import url(./blocks/view-photo/__title/view-photo__title.css);
+/* Блок delete-photo
+-----------------------------------------------------*/
+/* Блок form-auth
+-----------------------------------------------------*/
+@import url(./blocks/form-auth/form-auth.css);
+@import url(./blocks/form-auth/__btn/form-auth__btn.css);
+@import url(./blocks/form-auth/__input/form-auth__input.css);
+@import url(./blocks/form-auth/__title/form-auth__title.css);
+@import url(./blocks/form-auth/__fieldset/form-auth__fieldset.css);
+@import url(./blocks/form-auth/__link/form-auth__link.css);
+
+/* info-tooltip
+-----------------------------------------------------*/
+@import url(./blocks/info-tooltip/info-tooltip.css);
+@import url(./blocks/info-tooltip/__img/info-tooltip__img.css);
+@import url(./blocks/info-tooltip/__title/info-tooltip__title.css);
+
+
+/*   @import url(./blocks);      */
+/* Блок 
+-----------------------------------------------------*/

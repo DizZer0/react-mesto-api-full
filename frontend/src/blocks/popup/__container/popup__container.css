@@ -1,0 +1,13 @@
+.popup__container {
+  display: grid;
+  grid-template-columns: minmax(282px, min-content);
+  grid-template-rows: 20px minmax(min-content, max-content);
+  grid-gap: 16px;
+}
+@media (min-width: 767px) {
+  .popup__container {
+    grid-template-columns: 32px minmax(430px, min-content) min-content;
+    grid-template-rows: min-content minmax(min-content, max-content);
+    grid-gap: 8px;
+  }
+}

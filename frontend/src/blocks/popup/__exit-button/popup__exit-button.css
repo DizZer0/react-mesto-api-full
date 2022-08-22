@@ -1,0 +1,23 @@
+.popup__exit-button {
+  width: 20px;
+  height: 20px;
+  grid-row: 1/2;
+  background: url(../../../images/exit-button.svg) no-repeat;
+  background-size: contain;
+  padding: 0;
+  border: none;
+  justify-self: end;
+  transition: opacity .2s;
+}
+.popup__exit-button:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+@media (min-width: 767px) {
+  .popup__exit-button {
+    width: 32px;
+    height: 32px;
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+} 

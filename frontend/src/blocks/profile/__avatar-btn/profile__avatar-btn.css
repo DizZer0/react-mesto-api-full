@@ -1,0 +1,16 @@
+.profile__avatar-btn {
+  height: 120px;
+  width: 120px;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url(../../../images/profile-pencil-avatar.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  border-radius: 50%;
+  border: 0;
+  transition: .3s;
+}
+.profile__avatar-btn:hover {
+  opacity: 1;
+}

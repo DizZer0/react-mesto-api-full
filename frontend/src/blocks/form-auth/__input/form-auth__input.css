@@ -1,0 +1,21 @@
+.form-auth__input {
+  color: #ccc;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  background-color: black;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+}
+.form-auth__input:last-child {
+  margin-bottom: 0;
+}

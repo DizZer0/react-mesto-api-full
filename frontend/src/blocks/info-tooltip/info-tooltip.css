@@ -1,0 +1,13 @@
+.info-tooltip {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  width: 430px;
+  height: 330px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 36px;
+  box-sizing: border-box;
+}
