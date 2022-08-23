@@ -29,7 +29,7 @@ class AuthApi {
     return fetch(`${this.BASE_URL}/signin`, {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         "password": data.password,
