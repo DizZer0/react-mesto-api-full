@@ -1,6 +1,5 @@
-import React, { Children, Component } from "react";
-import { Navigate, Route } from 'react-router-dom'
-import Page from './Page'
+import React from "react";
+import { Navigate } from 'react-router-dom'
 
 const ProtectedRoute = ({component: Component, ...props}) => {
   const loggedIn = props.loggedIn

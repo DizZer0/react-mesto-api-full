@@ -1,7 +1,5 @@
 import React from "react";
-import { useEffect, useRef } from "react";
 import PopupWithForm from "./PopupWithForm";
-import { CurrentUserContext } from '../contexts/CurrentUserContext'
 
 function AddPhotoPopup(props) {
   const [name, setName] = React.useState('')
@@ -28,7 +26,6 @@ function AddPhotoPopup(props) {
     setLink('')
   }, [props.isOpen])
   
-  //Я правильно понимаю, что теперь значение инпута будет устанавливаться так: нажатие на клавишу = изменение useState = из useState получение значение инпута 
   return (
     <PopupWithForm
       isOpen={props.isOpen}

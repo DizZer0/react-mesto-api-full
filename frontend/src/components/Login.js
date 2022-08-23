@@ -1,8 +1,8 @@
 import React from 'react'
 import Header from './Header'
-import authApi from '../utils/AuthApi'
 
 const Login = (props) => {
+  console.log('ddd')
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   function handleChangeEmail(e) {

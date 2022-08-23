@@ -1,7 +1,7 @@
-const BASE_URL = 'https://auth.nomoreparties.co'
+import apiSettigs from "./utils";
 class AuthApi {
-  constructor(BASE_URL) {
-    this.BASE_URL = BASE_URL
+  constructor(apiSettigs) {
+    this.BASE_URL = apiSettigs.groupId
   }
 
   _parseResponse(res) {
@@ -61,5 +61,5 @@ class AuthApi {
     .catch((err) => console.log(err))
   }
 }
-const authApi = new AuthApi(BASE_URL)
+const authApi = new AuthApi(apiSettigs)
 export default authApi

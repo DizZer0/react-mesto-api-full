@@ -9,7 +9,7 @@ const InfoTooltip = (props) => {
       <div className="popup__container">
         <button className="popup__exit-button" onClick={props.handleClickPopupExit} type="button" ></button>
         <div className='info-tooltip'>
-          <img className='info-tooltip__img' src={props.isSuccess ? successLogo : failLogo}></img>
+          <img className='info-tooltip__img' src={props.isSuccess ? successLogo : failLogo} alt=''/>
           <h2 className='info-tooltip__title'>{props.isSuccess ? successText : failText}</h2>
         </div>
       </div>
