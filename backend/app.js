@@ -24,6 +24,7 @@ const allowedCors = [
   'https://mesto.lobachev.nomoredomains.sbs',
   'http://mesto.lobachev.nomoredomains.sbs',
   'localhost:3000',
+  'http://localhost:3000',
 ];
 
 app.use((req, res, next) => {
