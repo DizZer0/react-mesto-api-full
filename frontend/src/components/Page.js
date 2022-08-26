@@ -36,7 +36,7 @@ function Page(props) {
   }, [])
 
   function handleCardLike (card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(userId => userId === currentUser._id);
     api.changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
         setCards((state) => state.map((item) => item._id === card._id ? newCard : item));
@@ -106,7 +106,7 @@ function Page(props) {
   }
   return (
       <CurrentUserContext.Provider value={currentUser}>
-          <Header url={'/sign-in'} handleClickExit={props.handleClickExit} title={'Выйти'}/>
+          <Header url={'/signin'} handleClickExit={props.handleClickExit} title={'Выйти'}/>
           <Main 
             onEditAvatar={handleEditAvatarClick}
             onEditProfile={handleEditProfileClick}

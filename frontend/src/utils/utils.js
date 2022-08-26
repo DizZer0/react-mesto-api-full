@@ -1,4 +1,4 @@
 const apiSettigs = {
-  groupId: 'http://api.mesto.lobachev.nomoredomains.sbs'
+  groupId: 'https://api.mesto.lobachev.nomoredomains.sbs'
 }
 export default apiSettigs

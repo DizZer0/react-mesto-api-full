@@ -24,12 +24,13 @@ function Main(props) {
         <Card
           key={card._id}
           card={card}
-          ownerId={card.owner._id} name={card.name}
+          ownerId={card.owner} name={card.name}
           link={card.link} 
           likes={card.likes} 
           onCardDelete={props.onCardDelete} 
           onCardLike={props.onCardLike} 
-          onCardClick={props.onCardClick}/>
+          onCardClick={props.onCardClick}
+        />
       )}
       </section>
     </main>

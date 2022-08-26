@@ -10,10 +10,10 @@ import authApi from '../utils/AuthApi';
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState('false')
+  console.log(loggedIn)
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false)
   const [isSuccess, setIsSuccess] = React.useState(false)
   const navigate = useNavigate()
-
   function sendUserToken(token) {
     authApi.getValidityToken(token)
       .then(res => {
@@ -38,9 +38,11 @@ function App() {
   }
 
  function handleClickExit() {
+  console.log("exit")
   setLoggedIn('false')
  }
   function handleLoggedIn() {
+    console.log("logged true")
     setLoggedIn('true')
     navigate('/')
   }
@@ -65,8 +67,11 @@ function App() {
   React.useEffect(() => {
     authApi.getValidityToken(localStorage.getItem('jwt'))
       .then(res => {
-        setLoggedIn('true')
-        navigate('/')
+        if (res === undefined) {
+          setLoggedIn('false')
+        } else {
+          handleLoggedIn()
+        }
       })
       .catch(err => console.log(err))
   }, [])
@@ -75,8 +80,8 @@ function App() {
       <InfoTooltip isOpen={isInfoTooltipPopupOpen} handleClickPopupExit={handleClickPopupExit} isSuccess={isSuccess}/>
       <Routes>
         <Route path='/' element={<ProtectedRoute component={Page} handleClickExit={handleClickExit} loggedIn={loggedIn}/>} />
-        <Route path='/sign-in' element={<Login handleLoggedIn={handleLoggedIn} handleAuthorizationInfo={handleAuthorizationInfo}/>} /> 
-        <Route path='/sign-up' element={<Register handleRegisterInfo={handleRegisterInfo}/>} />
+        <Route path='/signin' element={<Login handleLoggedIn={handleLoggedIn} handleAuthorizationInfo={handleAuthorizationInfo}/>} /> 
+        <Route path='/signup' element={<Register handleRegisterInfo={handleRegisterInfo}/>} />
       </Routes>
     </div>
   );

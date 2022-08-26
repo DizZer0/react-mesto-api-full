@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import apiSettigs from "./utils";
 
 class Api {
@@ -12,9 +11,11 @@ class Api {
     return Promise.reject(`Ошибка: ${res.status}`)
   }
   getUserInfo() {
+    console.log(localStorage.getItem('jwt'))
     return fetch(`${this._groupId}/users/me`, {
       headers: {
-        authorization: this._token
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'Content-Type': 'application/json'
       }
     })
     .then(res => this._parseResponse(res))
@@ -22,7 +23,7 @@ class Api {
   getCardItems() {
     return fetch(`${this._groupId}/cards`, {
       headers: {
-        authorization: this._token
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       }
     })
     .then(res => this._parseResponse(res))
@@ -31,8 +32,8 @@ class Api {
     return fetch(`${this._groupId}/users/me`, {
       method: 'PATCH',
       headers: {
-        authorization: this._token,
-        'Content-type': 'application/json'
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         name: data.name,
@@ -44,7 +45,7 @@ class Api {
     return fetch(`${this._groupId}/cards`, {
       method: 'POST',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
         'Content-type': 'application/json'
       },
       body: JSON.stringify({
@@ -59,7 +60,7 @@ class Api {
     return fetch(`${this._groupId}/cards/${data}/likes`, {
       method: 'PUT',
       headers: {
-        authorization: this._token
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       }
     })
     .then(res => this._parseResponse(res))
@@ -68,7 +69,7 @@ class Api {
     return fetch(`${this._groupId}/users/me/avatar`, {
       method: 'PATCH',
       headers: {
-        authorization: this._token,
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
         'Content-type': 'application/json'
       },
       body: JSON.stringify({
@@ -80,7 +81,7 @@ class Api {
     return fetch(`${this._groupId}/cards/${data}/likes`, {
       method: 'DELETE',
       headers: {
-        authorization: this._token
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       }
     })
     .then(res => this._parseResponse(res))
@@ -89,7 +90,7 @@ class Api {
     return fetch(`${this._groupId}/cards/${data}`, {
       method: 'DELETE',
       headers: {
-        authorization: this._token
+        authorization: `Bearer ${localStorage.getItem('jwt')}`
       }
     })
     .then(res => this._parseResponse(res))

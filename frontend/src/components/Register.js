@@ -21,7 +21,7 @@ const Register = (props) => {
 
   return (
     <>
-      <Header url={'/sign-in'} title={'Войти'}/>
+      <Header url={'/signin'} title={'Войти'}/>
       <form action="#" className='form-auth' onSubmit={handleRegisterInfo} name='register'>
         <h2 className='form-auth__title'>Регистрация</h2>
         <fieldset className='form-auth__fieldset'>
@@ -29,7 +29,7 @@ const Register = (props) => {
           <input name='password' onChange={handleChangePassword} value={password} className='form-auth__input' type='password' placeholder='Пароль'/>
         </fieldset>
         <button type='submit' className='form-auth__btn'>Зарегистрироваться</button>
-        <Link className='form-auth__link' to='/sign-in'>Уже зарегистрированы? Войти</Link>
+        <Link className='form-auth__link' to='/signin'>Уже зарегистрированы? Войти</Link>
       </form>
       
     </>

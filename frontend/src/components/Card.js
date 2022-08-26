@@ -3,8 +3,9 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext'
 
 function Card(props) {
   const currentUser = React.useContext(CurrentUserContext);
+  console.log(props)
   const isOwn = props.ownerId === currentUser._id;
-  const isLiked = props.likes.some(i => i._id === currentUser._id)
+  const isLiked = props.likes.some(userId => userId === currentUser._id)
   const cardDeleteButtonClassName = (
     `photo-grid__delete-button ${isOwn ? '' : 'photo-grid__delete-button_hidden'}`
   )

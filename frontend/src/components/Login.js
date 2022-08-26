@@ -2,7 +2,6 @@ import React from 'react'
 import Header from './Header'
 
 const Login = (props) => {
-  console.log('ddd')
   const [email, setEmail] = React.useState('')
   const [password, setPassword] = React.useState('')
   function handleChangeEmail(e) {
@@ -20,7 +19,7 @@ function handleAuthorizationInfo(e) {
 
   return (
     <>
-      <Header url={'/sign-up'} title={'Регистрация'}/>
+      <Header url={'/signup'} title={'Регистрация'}/>
       <form className='form-auth' onSubmit={handleAuthorizationInfo}>
         <h2 className='form-auth__title'>Вход</h2>
         <fieldset className='form-auth__fieldset'>

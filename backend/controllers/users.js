@@ -17,7 +17,7 @@ module.exports.getByIdUser = (req, res, next) => {
   User.findById(req.params.userId)
     .orFail(new Error('noDataFound'))
     .then((user) => {
-      res.send({ data: user });
+      res.send(user);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
@@ -34,7 +34,7 @@ module.exports.getMyUser = (req, res, next) => {
   User.findById(req.user)
     .then((user) => {
       if (user) {
-        res.send({ data: user });
+        res.send(user);
       } else {
         next(new NoDataFound('Пользователь с таким id не найден'));
       }
@@ -83,12 +83,8 @@ module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, 'some-secret-key');
-      res
-        .cookie('jwt', token, {
-          maxAge: 3600000 * 24 * 7,
-        })
-        .send({ message: 'Авторизация успешна' });
+      const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+      res.send({ message: 'Авторизация успешна', token: token });
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

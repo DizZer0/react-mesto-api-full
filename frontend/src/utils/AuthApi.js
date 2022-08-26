@@ -2,10 +2,11 @@ import apiSettigs from "./utils";
 class AuthApi {
   constructor(apiSettigs) {
     this.BASE_URL = apiSettigs.groupId
-  }
 
+  }
   _parseResponse(res) {
     if(res.ok) {
+      console.log(res)
       return res.json()
     }
     return Promise.reject(`Ошибка: ${res.status}`)
@@ -46,20 +47,9 @@ class AuthApi {
         'Authorization': `Bearer ${data}`
       }
     })
-    .then(res => {
-      try {
-        if (res.ok === true){
-          this._parseResponse(res)
-        }
-      } catch(err){
-        return (err)
-      }
-    })
-    .then(res => {
-      return res
-    })
-    .catch((err) => console.log(err))
+    .then(res => this._parseResponse(res))
   }
 }
+
 const authApi = new AuthApi(apiSettigs)
 export default authApi
