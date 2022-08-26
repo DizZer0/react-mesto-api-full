@@ -6,6 +6,7 @@ const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
 const cors = require('cors');
+require('dotenv').config();
 
 const userRouter = require('./routes/users');
 const cardRouter = require('./routes/cards');
@@ -33,6 +34,12 @@ app.use(helmet());
 app.use(bodyParser.json());
 
 app.use(requestLogger);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.use('/', authRouter);
 

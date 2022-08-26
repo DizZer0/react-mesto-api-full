@@ -25,4 +25,5 @@
 /backend/*.log
 /backend/npm-debug.log*
 /backend/.npm
+/backend/.env
 
