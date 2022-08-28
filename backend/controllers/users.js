@@ -8,26 +8,25 @@ const ValidationError = require('../errors/ValidationError');
 const NoDataFound = require('../errors/NoDataFound');
 const Conflict = require('../errors/Conflict');
 const Unauthorized = require('../errors/Unauthorized');
+const ServerError = require('../errors/ServerError');
 
 module.exports.getAllUsers = (req, res, next) => {
   User.find({})
     .then((users) => res.send(users))
-    .catch(() => next({ message: 'Произошла ошибка' }));
+    .catch(() => next(new ServerError('Произошла ошибка')));
 };
 
 module.exports.getByIdUser = (req, res, next) => {
   User.findById(req.params.userId)
-    .orFail(new Error('noDataFound'))
+    .orFail(new NoDataFound('Пользователь с таким id не найден'))
     .then((user) => {
       res.send(user);
     })
     .catch((err) => {
       if (err.name === 'CastError') {
         next(new ValidationError('Невалидный id'));
-      } else if (err.message === 'noDataFound') {
-        next(new NoDataFound('Пользователь с таким id не найден'));
       } else {
-        next({ message: 'Произошла ошибка' });
+        next(new ServerError('Произошла ошибка'));
       }
     });
 };
@@ -41,12 +40,8 @@ module.exports.getMyUser = (req, res, next) => {
         next(new NoDataFound('Пользователь с таким id не найден'));
       }
     })
-    .catch((err) => {
-      if (err.name === 'CastError') {
-        next(new ValidationError('Невалидный id'));
-      } else {
-        next({ message: 'Произошла ошибка' });
-      }
+    .catch(() => {
+      next(new ServerError('Произошла ошибка'));
     });
 };
 
@@ -76,7 +71,7 @@ module.exports.createUser = (req, res, next) => {
       } else if (err.code === 11000) {
         next(new Conflict('пользователь с таким email уже существует'));
       } else {
-        next({ message: 'Произошла ошибка' });
+        next(new ServerError('Произошла ошибка'));
       }
     });
 };
@@ -89,12 +84,10 @@ module.exports.login = (req, res, next) => {
       res.send({ message: 'Авторизация успешна', token: token });
     })
     .catch((err) => {
-      if (err.name === 'ValidationError') {
-        next(new ValidationError('Некорректные данные'));
-      } else if (err.statusCode === 401) {
+      if (err.statusCode === 401) {
         next(new Unauthorized('Неправильные почта или пароль'));
       } else {
-        next({ message: 'Произошла ошибка' });
+        next(new ServerError('Произошла ошибка'));
       }
     });
 };
@@ -111,7 +104,7 @@ module.exports.updateProfile = (req, res, next) => {
       if (err.name === 'ValidationError') {
         next(new ValidationError('Некорректные данные'));
       } else {
-        next({ message: 'Произошла ошибка' });
+        next(new ServerError('Произошла ошибка'));
       }
     });
 };
@@ -125,7 +118,7 @@ module.exports.updateAvatar = (req, res, next) => {
       if (err.name === 'ValidationError') {
         next(new ValidationError('Некорректные данные'));
       } else {
-        next({ message: 'Произошла ошибка' });
+        next(new ServerError('Произошла ошибка'));
       }
     });
 };

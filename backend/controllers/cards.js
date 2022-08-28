@@ -2,11 +2,12 @@ const Card = require('../models/card');
 const ValidationError = require('../errors/ValidationError');
 const NoDataFound = require('../errors/NoDataFound');
 const Forbidden = require('../errors/Forbidden');
+const ServerError = require('../errors/ServerError');
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
     .then((cards) => res.send(cards))
-    .catch(() => next({ message: 'Произошла ошибка' }));
+    .catch(() => next(new ServerError('Произошла ошибка')));
 };
 
 module.exports.createCards = (req, res, next) => {
@@ -18,7 +19,7 @@ module.exports.createCards = (req, res, next) => {
       if (err.name === 'ValidationError') {
         next(new ValidationError('переданы некорректные данные'));
       } else {
-        next({ message: 'Произошла ошибка' });
+        next(new ServerError('Произошла ошибка'));
       }
     });
 };
@@ -41,7 +42,7 @@ module.exports.deleteCard = (req, res, next) => {
       if (err.name === 'CastError') {
         next(new ValidationError('Невалидный id'));
       } else {
-        next({ message: 'Произошла ошибка' });
+        next(new ServerError('Произошла ошибка'));
       }
     });
 };
@@ -59,7 +60,7 @@ module.exports.likeCard = (req, res, next) => {
       if (err.name === 'CastError') {
         next(new ValidationError('Невалидный id'));
       } else {
-        next({ message: 'Произошла ошибка' });
+        next(new ServerError('Произошла ошибка'));
       }
     });
 };
@@ -77,7 +78,7 @@ module.exports.dislikeCard = (req, res, next) => {
       if (err.name === 'CastError') {
         next(new ValidationError('Невалидный id'));
       } else {
-        next({ message: 'Произошла ошибка' });
+        next(new ServerError('Произошла ошибка'));
       }
     });
 };

@@ -24,6 +24,8 @@ const app = express();
 
 app.use(cors());
 
+app.use(requestLogger);
+
 app.use(rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -32,8 +34,6 @@ app.use(rateLimit({
 app.use(helmet());
 
 app.use(bodyParser.json());
-
-app.use(requestLogger);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
@@ -49,9 +49,10 @@ app.use(auth);
 app.use('/', userRouter);
 app.use('/', cardRouter);
 
+app.use((req, res, next) => next(new NoDataFound('Неправильный маршрут')));
+
 app.use(errorLogger);
 
-app.use((req, res, next) => next(new NoDataFound('Неправильный маршрут')));
 app.use(errors());
 app.use(errHandler);
 
