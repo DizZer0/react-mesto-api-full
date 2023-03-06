@@ -42,7 +42,7 @@
   width: 20px;
   height: 20px;
   grid-row: 1/2;
-  background: url(../../../images/exit-button.svg) no-repeat;
+  background: url(../../images/exit-button.svg) no-repeat;
   background-size: contain;
   padding: 0;
   border: none;

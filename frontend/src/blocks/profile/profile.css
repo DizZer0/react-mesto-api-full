@@ -22,7 +22,7 @@
   height: 50px;
   border: 2px solid #fff;
   border-radius: 2%;
-  background: url(../../../images/profile-plus.svg) center no-repeat transparent;
+  background: url(../../images/profile-plus.svg) center no-repeat transparent;
   cursor: pointer;
   transition: opacity .2s;
 }
@@ -55,7 +55,7 @@
   width: 120px;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  background-image: url(../../../images/profile-pencil-avatar.svg);
+  background-image: url(../../images/profile-pencil-avatar.svg);
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -76,7 +76,7 @@
   margin-top: 8px;
   padding: 0;
   border: 1px solid #fff;
-  background: url(../../../images/profile-pencil.svg)  center no-repeat transparent;
+  background: url(../../images/profile-pencil.svg)  center no-repeat transparent;
   background-size: 41%;
   cursor: pointer;
   transition: opacity .2s;
