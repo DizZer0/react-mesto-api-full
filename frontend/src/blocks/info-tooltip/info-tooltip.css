@@ -11,3 +11,21 @@
   padding: 60px 36px;
   box-sizing: border-box;
 }
+
+.info-tooltip__title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  color: #000000;
+  margin: 0;
+
+}
+
+.info-tooltip__img {
+  width: 120px;
+  padding-bottom: 32px;
+}
