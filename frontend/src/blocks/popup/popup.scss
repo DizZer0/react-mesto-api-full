@@ -30,14 +30,6 @@
   grid-gap: 16px;
 }
 
-@media (min-width: 767px) {
-  .popup__container {
-    grid-template-columns: 32px minmax(430px, min-content) min-content;
-    grid-template-rows: min-content minmax(min-content, max-content);
-    grid-gap: 8px;
-  }
-}
-
 .popup__exit-button {
   width: 20px;
   height: 20px;
@@ -59,5 +51,11 @@
     height: 32px;
     grid-column: 3/4;
     grid-row: 1/2;
+  }
+
+  .popup__container {
+    grid-template-columns: 32px minmax(430px, min-content) min-content;
+    grid-template-rows: min-content minmax(min-content, max-content);
+    grid-gap: 8px;
   }
 } 

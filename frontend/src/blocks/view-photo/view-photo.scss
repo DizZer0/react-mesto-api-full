@@ -1,0 +1,25 @@
+.view-photo {
+  grid-row: 2/3;
+  grid-column: 1/2;
+
+}
+
+.view-photo__img {
+  max-width: 75vw;
+  max-height: 75vh;
+  min-width: 100%;
+  padding-bottom: 7px;
+}
+
+.view-photo__title {
+  @include font('Inter', 12px, 400);
+  color: #FFFFFF;
+  margin: 0;
+}
+
+@media (min-width: 767px) {
+  .view-photo {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+}

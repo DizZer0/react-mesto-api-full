@@ -1,0 +1,8 @@
+@mixin font ($family, $size, $weight, $height: 122%, $style: normal, $spacing: 0em) {
+  font-family: $family, 'Arial', 'Helvetica', sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  line-height: $height;
+  letter-spacing: $spacing;
+}

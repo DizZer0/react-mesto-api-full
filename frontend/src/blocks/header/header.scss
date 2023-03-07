@@ -13,26 +13,21 @@
   padding-bottom: 26px;
 }
 
-@media (min-width: 767px) {
-  .header__logo {
-    margin-left: 0px;
-    padding-bottom: 36px;
-  }
-}
-
 .header__btn-navigate {
+  @include font('Inter', 18px, 400);
   color: white;
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: 0em;
   text-align: right;
-
   text-decoration: none;
   transition: .2s;
 }
 
 .header__btn-navigate:hover {
   opacity: .6;
+}
+
+@media (min-width: 767px) {
+  .header__logo {
+    margin-left: 0px;
+    padding-bottom: 36px;
+  }
 }

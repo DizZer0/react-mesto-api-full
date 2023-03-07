@@ -71,24 +71,16 @@
 }
 
 .photo-grid__like-number {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 16px;
+  @include font('Inter', 13px, 400);
   text-align: center;
   color: #000000;
   margin: 0;
 }
 
 .photo-grid__title {
+  @include font('Inter', 24px, 900);
   max-width: 210px;
   margin: 0;
-  font-family: 'Inter' , 'Arial', 'Helvetica', sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 121%;
   color: #000000;
   align-self: center;
   text-overflow: ellipsis;

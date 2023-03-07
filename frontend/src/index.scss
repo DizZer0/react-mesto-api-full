@@ -1,48 +1,49 @@
-@import url(./vendor/normalize/normalize.css);
-@import url(./vendor/fonts/fonts.css);
+@import './vendor/normalize/normalize.scss';
+@import'./vendor/fonts/fonts.scss';
+@import './helpers/mixins.scss';
 /* Блок page 
 -----------------------------------------------------*/
-@import url(./blocks/page/page.css);
+@import './blocks/page/page.scss';
 /* Блок header
 -----------------------------------------------------*/
-@import url(./blocks/header/header.css);
+@import './blocks/header/header.scss';
 
 /* Блок logo
 -----------------------------------------------------*/
-@import url(./blocks/logo/logo.css);
+@import './blocks/logo/logo.scss';
 /* Блок content
 -----------------------------------------------------*/
-@import url(./blocks/content/content.css);
+@import './blocks/content/content.scss';
 /* Блок profile
 -----------------------------------------------------*/
-@import url(./blocks/profile/profile.css);
+@import './blocks/profile/profile.scss';
 
 /* Блок photo-grid
 -----------------------------------------------------*/
-@import url(./blocks/photo-grid/photo-grid.css);
+@import './blocks/photo-grid/photo-grid.scss';
 /* Блок footer
 -----------------------------------------------------*/
-@import url(./blocks/footer/footer.css);
+@import './blocks/footer/footer.scss';
 
 /* Блок popup
 -----------------------------------------------------*/
-@import url(./blocks/popup/popup.css);
+@import './blocks/popup/popup.scss';
 
 /* Блок form-change
 -----------------------------------------------------*/
-@import url(./blocks/form-change/form-change.css);
+@import './blocks/form-change/form-change.scss';
 /* Блок view-photo
 -----------------------------------------------------*/
-@import url(./blocks/view-photo/view-photo.css);
+@import './blocks/view-photo/view-photo.scss';
 /* Блок delete-photo
 -----------------------------------------------------*/
 /* Блок form-auth
 -----------------------------------------------------*/
-@import url(./blocks/form-auth/form-auth.css);
+@import './blocks/form-auth/form-auth.scss';
 
 /* info-tooltip
 -----------------------------------------------------*/
-@import url(./blocks/info-tooltip/info-tooltip.css);
+@import './blocks/info-tooltip/info-tooltip.scss';
 /*   @import url(./blocks);      */
 /* Блок 
 -----------------------------------------------------*/

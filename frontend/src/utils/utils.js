@@ -1,4 +1,5 @@
 const apiSettigs = {
-  groupId: 'https://api.mesto.lobachev.nomoredomains.sbs'
+  groupId: 'http://localhost:3000'
 }
+//'https://api.mesto.lobachev.nomoredomains.sbs'
 export default apiSettigs
