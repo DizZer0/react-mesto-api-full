@@ -13,9 +13,8 @@
 }
 
 .info-tooltip__title {
-  @include font('Inter', 24px, 900);
+  @include font('Inter', 24px, 900, $fontColorOther);
   text-align: center;
-  color: #000000;
   margin: 0;
 
 }

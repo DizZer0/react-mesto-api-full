@@ -6,9 +6,8 @@
 }
 
 .footer__copyright {
-  @include font('Inter', 14px, 400);
+  @include font('Inter', 14px, 400, $fontColorFooter);
   margin: 0;
-  color: #545454;
 }
 @media (min-width: 767px) {
   .footer__copyright {

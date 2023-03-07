@@ -91,10 +91,9 @@
 }
 
 .profile__status {
-  @include font('Inter', 14px, 400);
+  @include font('Inter', 14px, 400, $fontColorMain);
   width: 100%;
   margin: 0;
-  color: white;
   grid-row: 2/3;
   grid-column: 1/4;
   text-overflow: ellipsis;

@@ -71,17 +71,15 @@
 }
 
 .photo-grid__like-number {
-  @include font('Inter', 13px, 400);
+  @include font('Inter', 13px, 400, $fontColorOther);
   text-align: center;
-  color: #000000;
   margin: 0;
 }
 
 .photo-grid__title {
-  @include font('Inter', 24px, 900);
+  @include font('Inter', 24px, 900, $fontColorOther);
   max-width: 210px;
   margin: 0;
-  color: #000000;
   align-self: center;
   text-overflow: ellipsis;
   white-space: nowrap;

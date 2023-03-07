@@ -6,7 +6,7 @@
 }
 
 .form-auth__btn {
-  @include font('Inter', 18px, 400);
+  @include font('Inter', 18px, 400, $fontColorOther);
   text-align: center;
   background-color: white;
   border: none;
@@ -27,8 +27,7 @@
 }
 
 .form-auth__input {
-  @include font('Inter', 14px, 400);
-  color: #ccc;
+  @include font('Inter', 14px, 400, #ccc);
   text-align: left;
   background-color: black;
   height: 27px;
@@ -45,8 +44,7 @@
 }
 
 .form-auth__link {
-  color: white;
-  @include font('Inter', 14px, 400);
+  @include font('Inter', 14px, 400, $fontColorMain);
   text-align: center;
   text-decoration: none;
   transition: .2s;
@@ -57,9 +55,8 @@
 }
 
 .form-auth__title {
-  color: white;
-  @include font('Inter', 24px, 900);
+  @include font('Inter', 24px, 900, $fontColorMain);
   text-align: center;
   margin: 0;
-  padding-bottom: 50px;
+  padding-bottom: 50p x;
 }
