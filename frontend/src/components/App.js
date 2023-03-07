@@ -1,5 +1,4 @@
 import React from 'react';
-import '../index.css';
 import Page from './Page'
 import Login from './Login'
 import Register from './Register';

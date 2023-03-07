@@ -1,0 +1,25 @@
+.info-tooltip {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  width: 430px;
+  height: 330px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 36px;
+  box-sizing: border-box;
+}
+
+.info-tooltip__title {
+  @include font('Inter', 24px, 900, $fontColorOther);
+  text-align: center;
+  margin: 0;
+
+}
+
+.info-tooltip__img {
+  width: 120px;
+  padding-bottom: 32px;
+}

@@ -1,0 +1,62 @@
+.form-auth {
+  display: flex;
+  flex-direction: column;
+  width: 358px;
+  padding: 60px 0 0 ;
+}
+
+.form-auth__btn {
+  @include font('Inter', 18px, 400, $fontColorOther);
+  text-align: center;
+  background-color: white;
+  border: none;
+  border-radius: 2px;
+  height: 50px;
+  transition: .2s;
+  margin-bottom: 15px;
+}
+
+.form-auth__btn:hover {
+  opacity: .85;
+}
+
+.form-auth__fieldset {
+  border: none;
+  margin: 0;
+  padding: 0 0 216px;
+}
+
+.form-auth__input {
+  @include font('Inter', 14px, 400, #ccc);
+  text-align: left;
+  background-color: black;
+  height: 27px;
+  border: none;
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.form-auth__input:last-child {
+  margin-bottom: 0;
+}
+
+.form-auth__link {
+  @include font('Inter', 14px, 400, $fontColorMain);
+  text-align: center;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.form-auth__link:hover {
+  opacity: .6;
+}
+
+.form-auth__title {
+  @include font('Inter', 24px, 900, $fontColorMain);
+  text-align: center;
+  margin: 0;
+  padding-bottom: 50p x;
+}

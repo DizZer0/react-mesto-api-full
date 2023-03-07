@@ -1,0 +1,32 @@
+.header {
+  width: 100%;
+  max-width: 880px;
+  min-width: 320px;
+  border-bottom: 1px solid #545454;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  margin-left: 27px;
+  padding-bottom: 26px;
+}
+
+.header__btn-navigate {
+  @include font('Inter', 18px, 400, $fontColorMain);
+  text-align: right;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.header__btn-navigate:hover {
+  opacity: .6;
+}
+
+@media (min-width: 767px) {
+  .header__logo {
+    margin-left: 0px;
+    padding-bottom: 36px;
+  }
+}

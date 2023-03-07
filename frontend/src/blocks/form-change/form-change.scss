@@ -1,0 +1,102 @@
+.form-change {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px 22px;
+}
+
+.form-change__input-error {
+  @include font('Inter', 12px, 400, #FF0000);
+  display: block;
+  min-height: 30px;
+  opacity: 0;
+}
+
+.form-change__input-error_active {
+  opacity: 1;
+}
+
+.form-change__input-text {
+  border: none;
+  padding: 0 0 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-change__save-button {
+  @include font('Inter', 14px, 400, $fontColorMain);
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 2px;
+  background-color: black;
+  text-align: center;
+  transition: opacity .2s;
+}
+
+.form-change__save-button:hover {
+  opacity: 80%;
+  cursor: pointer; 
+}
+
+.form-change__save-button_inactive {
+  opacity: 20%;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.form-change__save-button_inactive:hover {
+  opacity: 20%;
+  cursor: default;
+}
+
+.form-change__text {
+  @include font('Inter', 14px, 400, $fontColorOther);
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  padding: 0 0 10px;
+  margin-bottom: 5px;
+}
+
+.form-change__text:last-child {
+  margin-bottom: 0;
+}
+
+.form-change__text_type_error {
+  border-color: #FF0000;
+}
+
+.form-change__title {
+  @include font('Inter', 18px, 900, $fontColorOther);
+  margin: 0;
+  padding-bottom: 48px;
+}
+
+.form-change__title_type_delete {
+  padding-bottom: 34px;
+}
+
+@media (min-width: 767px) {
+  .form-change {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    padding: 34px 36px 37px;
+  }
+
+  .form-change__save-button {
+    height: 50px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .form-change__title {
+    font-size: 24px;
+    line-height: 29px;
+    }
+}

@@ -1,0 +1,50 @@
+@import './vendor/normalize/normalize.scss';
+@import'./vendor/fonts/fonts.scss';
+@import './helpers/mixins.scss';
+@import './helpers/const.scss';
+/* Блок page 
+-----------------------------------------------------*/
+@import './blocks/page/page.scss';
+/* Блок header
+-----------------------------------------------------*/
+@import './blocks/header/header.scss';
+
+/* Блок logo
+-----------------------------------------------------*/
+@import './blocks/logo/logo.scss';
+/* Блок content
+-----------------------------------------------------*/
+@import './blocks/content/content.scss';
+/* Блок profile
+-----------------------------------------------------*/
+@import './blocks/profile/profile.scss';
+
+/* Блок photo-grid
+-----------------------------------------------------*/
+@import './blocks/photo-grid/photo-grid.scss';
+/* Блок footer
+-----------------------------------------------------*/
+@import './blocks/footer/footer.scss';
+
+/* Блок popup
+-----------------------------------------------------*/
+@import './blocks/popup/popup.scss';
+
+/* Блок form-change
+-----------------------------------------------------*/
+@import './blocks/form-change/form-change.scss';
+/* Блок view-photo
+-----------------------------------------------------*/
+@import './blocks/view-photo/view-photo.scss';
+/* Блок delete-photo
+-----------------------------------------------------*/
+/* Блок form-auth
+-----------------------------------------------------*/
+@import './blocks/form-auth/form-auth.scss';
+
+/* info-tooltip
+-----------------------------------------------------*/
+@import './blocks/info-tooltip/info-tooltip.scss';
+/*   @import url(./blocks);      */
+/* Блок 
+-----------------------------------------------------*/

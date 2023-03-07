@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 880px;
+  width: 100%;
+}
+
+.footer__copyright {
+  @include font('Inter', 14px, 400, $fontColorFooter);
+  margin: 0;
+}
+@media (min-width: 767px) {
+  .footer__copyright {
+    font-size: 18px;
+  }
+}
