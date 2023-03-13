@@ -3,7 +3,7 @@ import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
 import ImagePopup from './ImagePopup'
-import AddPhotoPopup from './AddPhotoPopup'
+import AddPhotoPopup from './AddPhotoPopup.tsx'
 import EditAvatarPopup from './EditAvatarPopup'
 import EditProfilePopup from './EditProfilePopup';
 import api from '../utils/Api';

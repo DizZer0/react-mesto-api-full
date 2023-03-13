@@ -9,10 +9,10 @@ import authApi from '../utils/AuthApi';
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState('false')
-  console.log(loggedIn)
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false)
   const [isSuccess, setIsSuccess] = React.useState(false)
   const navigate = useNavigate()
+
   function sendUserToken(token) {
     authApi.getValidityToken(token)
       .then(res => {
@@ -37,11 +37,9 @@ function App() {
   }
 
  function handleClickExit() {
-  console.log("exit")
   setLoggedIn('false')
  }
   function handleLoggedIn() {
-    console.log("logged true")
     setLoggedIn('true')
     navigate('/')
   }
