@@ -36,9 +36,10 @@ function App() {
       })
   }
 
- function handleClickExit() {
-  setLoggedIn('false')
- }
+  function handleClickExit() {
+    setLoggedIn('false')
+  }
+
   function handleLoggedIn() {
     setLoggedIn('true')
     navigate('/')
