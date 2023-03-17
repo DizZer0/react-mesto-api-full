@@ -3,15 +3,10 @@ import { useEffect } from "react";
 import PopupWithForm from "./PopupWithForm";
 import { CurrentUserContext } from '../contexts/CurrentUserContext'
 
-interface User {
-  name: string;
-  about: string;
-}
-
 interface Props {
   isOpen: boolean;
   onClose: () => void;
-  onUpdateUser: ({name, about}: User) => void;
+  onUpdateUser: ({name, about}: {name: string, about:string}) => void;
 }
 
 function EditProfilePopup({isOpen, onClose, onUpdateUser}: Props) {

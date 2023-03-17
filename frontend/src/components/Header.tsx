@@ -1,14 +1,30 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import logo from '../images/header-logo.svg'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 interface Props {
-  url: string;
   handleClickExit: () => void;
-  title: string;
 }
 
-function Header({url, handleClickExit, title}: Props) {
+function Header({handleClickExit}: Props) {
+  const [title, setTitle] = useState('')
+  const [url, setUrl] = useState('')
+
+  const location = useLocation().pathname
+  console.log(location)
+
+  function switchingContent() {
+    if (location === '/signup'){
+      setTitle('Войти')
+      setUrl('/signin')
+    } else if (location === '/signin'){
+      setTitle('Регистрация')
+      setUrl('/signup')
+    } else {
+      setTitle('Выйти')
+      setUrl('/signin')
+    }
+  }
 
   function click() {
     if (title === 'Выйти') {
@@ -16,6 +32,10 @@ function Header({url, handleClickExit, title}: Props) {
       handleClickExit()
     }
   }
+
+  useEffect(() => {
+    switchingContent()
+  })
 
   return (
     <header className="header">

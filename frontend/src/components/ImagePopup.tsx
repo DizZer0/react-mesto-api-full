@@ -1,13 +1,8 @@
 import React from "react";
-
-interface Card {
-  active: boolean;
-  src: string;
-  name: string;
-}
+import { IImage } from "../types/types";
 
 interface Props {
-  card: Card;
+  card: IImage;
   onClose: () => void;
 }
 
