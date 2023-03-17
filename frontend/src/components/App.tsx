@@ -2,18 +2,19 @@ import React from 'react';
 import Page from './Page'
 import Login from './Login'
 import Register from './Register';
+import Header from './Header';
 import InfoTooltip from './InfoTooltip'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import ProtectedRoute from './ProtectedRoute';
 import authApi from '../utils/AuthApi';
 
 function App() {
-  const [loggedIn, setLoggedIn] = React.useState('false')
-  console.log(loggedIn)
-  const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState(false)
-  const [isSuccess, setIsSuccess] = React.useState(false)
+  const [loggedIn, setLoggedIn] = React.useState<boolean>(false)
+  const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = React.useState<boolean>(false)
+  const [isSuccess, setIsSuccess] = React.useState<boolean>(false)
   const navigate = useNavigate()
-  function sendUserToken(token) {
+
+  function sendUserToken(token: string) {
     authApi.getValidityToken(token)
       .then(res => {
         handleLoggedIn()
@@ -21,7 +22,7 @@ function App() {
       .catch(err => console.log(err))
   }
 
-  function handleAuthorizationInfo(data) {
+  function handleAuthorizationInfo(data: {email: string, password: string}) {
     authApi.postAuthorizationInfo(data)
       .then(res => {
         if(res.token) {
@@ -36,13 +37,12 @@ function App() {
       })
   }
 
- function handleClickExit() {
-  console.log("exit")
-  setLoggedIn('false')
- }
+  function handleClickExit() {
+    setLoggedIn(false)
+  }
+
   function handleLoggedIn() {
-    console.log("logged true")
-    setLoggedIn('true')
+    setLoggedIn(true)
     navigate('/')
   }
 
@@ -50,7 +50,7 @@ function App() {
     setIsInfoTooltipPopupOpen(false)
   }
 
-  function handleRegisterInfo(data) {
+  function handleRegisterInfo(data: {email: string, password: string}) {
     authApi.postRegistorInfo(data)
       .then(res => {
         setIsInfoTooltipPopupOpen(true)
@@ -67,7 +67,7 @@ function App() {
     authApi.getValidityToken(localStorage.getItem('jwt'))
       .then(res => {
         if (res === undefined) {
-          setLoggedIn('false')
+          setLoggedIn(false)
         } else {
           handleLoggedIn()
         }
@@ -77,9 +77,10 @@ function App() {
   return (
     <div className="page">
       <InfoTooltip isOpen={isInfoTooltipPopupOpen} handleClickPopupExit={handleClickPopupExit} isSuccess={isSuccess}/>
+      <Header handleClickExit={handleClickExit}/>
       <Routes>
-        <Route path='/' element={<ProtectedRoute component={Page} handleClickExit={handleClickExit} loggedIn={loggedIn}/>} />
-        <Route path='/signin' element={<Login handleLoggedIn={handleLoggedIn} handleAuthorizationInfo={handleAuthorizationInfo}/>} /> 
+        <Route path='/' element={<ProtectedRoute component={Page} loggedIn={loggedIn}/>} />
+        <Route path='/signin' element={<Login  handleAuthorizationInfo={handleAuthorizationInfo}/>} /> 
         <Route path='/signup' element={<Register handleRegisterInfo={handleRegisterInfo}/>} />
       </Routes>
     </div>

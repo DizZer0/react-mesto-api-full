@@ -11,7 +11,6 @@ class Api {
     return Promise.reject(`Ошибка: ${res.status}`)
   }
   getUserInfo() {
-    console.log(localStorage.getItem('jwt'))
     return fetch(`${this._groupId}/users/me`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem('jwt')}`,
